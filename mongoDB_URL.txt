@@ -1,0 +1,1 @@
+mongodb+srv://RahulkrSharma:Rahul2004@cluster0.iym0aat.mongodb.net/Alpha-Tribe?retryWrites=true&w=majority&appName=Cluster0
