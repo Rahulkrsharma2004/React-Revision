@@ -1,0 +1,64 @@
+tailwind.config.js
+----------------------------
+module.exports = {
+  content: [
+    "./src/**/*.{js,jsx,ts,tsx}",
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+
+--------------------------------
+postcss.config.js
+
+export default {
+  plugins: {
+    tailwindcss: {},
+    autoprefixer: {},
+  },
+}
+
+-------------------------------
+
+index.css
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+---------------------------------
+import index.css file in main.jsx file
+
+------------------------------------
+
+and install in terminal with npm
+
+1.npm install -D tailwindcss
+2.npx tailwindcss init
+
+------------------------------------
+client side routing after refresh page
+
+=> For Netlify deploy
+public -> _redirects 
+
+/*    /index.html   200
+
+=> For Vercel deploy
+
+main root -> vercel.json (jisme index.html file hai)
+
+{
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
+
+
+
