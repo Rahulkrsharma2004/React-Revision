@@ -55,8 +55,6 @@ const Products = () => {
     <>
       <h1>PRODUCTS DATA</h1>
       <h1>PRODUCTS DATA</h1>
-      <h1>PRODUCTS DATA</h1>
-      <h1>PRODUCTS DATA</h1>
       <div style={{ display: "flex", justifyContent: "space-evenly" }}>
         <div>
           <select
