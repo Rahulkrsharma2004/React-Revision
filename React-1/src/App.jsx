@@ -13,6 +13,7 @@ function App() {
         <p>Contact: 123-456-7890</p>
         <p>�� My Company, Inc.</p>
         <p>123 Main St, Anytown, USA 12345</p>
+        
       </footer>
     </>
   )
