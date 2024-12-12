@@ -4,7 +4,9 @@ import { useState } from "react";
 function App() {
   const [count,setCount] = useState(0)
   const decrement = () => {
-    setCount(count-1)
+    if(count > 0){
+      setCount(count-1)
+    }
   }
   const increment = () =>{
     setCount(count+1)
@@ -12,7 +14,9 @@ function App() {
   return (
     <>
       <h1>Counter</h1>
-      <button onClick={decrement}>-</button>
+      <button onClick={decrement}
+      style={{cursor:count==0 ? "not-allowed":"pointer"}}>
+        -</button>
       <p>{count}</p>
       <button onClick={increment}>+</button>
     </>
