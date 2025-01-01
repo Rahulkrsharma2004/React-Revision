@@ -1,5 +1,6 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
+import DataShow from "./DataShow"
 
 const App = () =>{
   
@@ -20,9 +21,7 @@ const App = () =>{
   }
   return(
     <>
-     <h1>{data.userId}</h1>
-     <p>{data.id}</p>
-     <p>{data.title}</p>
+    <DataShow  result={data} />
     </>
   )
 }
