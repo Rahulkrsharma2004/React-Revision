@@ -1,29 +1,30 @@
-import axios from "axios"
-import { useEffect, useState } from "react"
-import DataShow from "./DataShow"
+import React, { useEffect } from "react";
+import { Provider, useDispatch, useSelector } from "react-redux";
+import store from "./store";
+import { fetchData } from "./dataSlice";
+import DataShow from "./DataShow";
 
-const App = () =>{
-  
-  const [data,setData] = useState([])
+const App = () => {
+  const dispatch = useDispatch();
+  const { data, loading, error } = useSelector((state) => state.data);
 
-  useEffect(()=>{
-    dataFetch()
-  },[])
+  useEffect(() => {
+    dispatch(fetchData());
+  }, [dispatch]);
 
-  const dataFetch = async() =>{
-    try {
-      const res = await axios.get("https://jsonplaceholder.typicode.com/todos/1")
-      console.log(res.data)
-      setData(res.data)
-    } catch (error) {
-      console.log(error.message)
-    }
-  }
-  return(
+  return (
     <>
-    <DataShow  result={data} />
+      {loading && <p>Loading...</p>}
+      {error && <p>Error: {error}</p>}
+      {data && <DataShow result={data} />}
     </>
-  )
-}
+  );
+};
 
-export default App
+const Root = () => (
+  <Provider store={store}>
+    <App />
+  </Provider>
+);
+
+export default Root;

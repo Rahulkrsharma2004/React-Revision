@@ -1,12 +1,11 @@
-// import React from 'react'
-
-// const DataShow = ({result}) => {
-//   return (
-//     <div>
-//       <h1>{result.userId}</h1>
-//       <p>{result.title}</p>
-//     </div>
-//   )
-// }
-
-// export default DataShow
+const DataShow = ({ result }) => {
+    return (
+      <div>
+        <h1>Data:</h1>
+        <pre>{JSON.stringify(result, null, 2)}</pre>
+      </div>
+    );
+  };
+  
+  export default DataShow;
+  
