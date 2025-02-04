@@ -14,6 +14,7 @@ const App = () => {
 
   return (
     <>
+    <h1>welcome</h1>
       {loading && <p>Loading...</p>}
       {error && <p>Error: {error}</p>}
       {data && <DataShow result={data} />}
