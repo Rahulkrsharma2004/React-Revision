@@ -1,14 +1,14 @@
 tailwind.config.js
 ----------------------------
-module.exports = {
-  content: [
-    "./src/**/*.{js,jsx,ts,tsx}",
-  ],
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {},
   },
   plugins: [],
-}
+};
+  
 
 --------------------------------
 postcss.config.js
@@ -36,8 +36,7 @@ import index.css file in main.jsx file
 
 and install in terminal with npm
 
-1.npm install -D tailwindcss
-2.npx tailwindcss init
+npm install -D tailwindcss postcss autoprefixer
 
 ------------------------------------
 client side routing after refresh page
@@ -59,6 +58,18 @@ main root -> vercel.json (jisme index.html file hai)
     }
   ]
 }
+
+
+For Backend Deployment
+
+vercel.json
+
+{
+    "version": 2,
+    "builds": [{ "src": "index.js", "use": "@vercel/node" }],
+    "routes": [{ "src": "/(.*)", "dest": "index.js" }]
+  }
+  
 
 
 
