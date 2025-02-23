@@ -16,11 +16,14 @@ function App() {
       <h1>Counter</h1>
       <button onClick={decrement}
       style={{cursor:count==0 ? "not-allowed":"pointer"}}>
-        -</button>
+        SUB</button>
       <p>{count}</p>
-      <button onClick={increment}>+</button>
+      <button onClick={increment}>ADD</button>
+
     </>
   );
 }
 
 export default App;
+
+
