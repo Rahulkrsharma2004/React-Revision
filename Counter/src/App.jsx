@@ -19,6 +19,8 @@ function App() {
         SUB</button>
       <p>{count}</p>
       <button onClick={increment}>ADD</button>
+      <button onClick={increment}>ADD</button>
+      <button onClick={increment}>ADD</button>
 
     </>
   );
