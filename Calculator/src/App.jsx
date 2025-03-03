@@ -10,7 +10,7 @@ const App = () =>{
 
   const DataFetch = async() =>{
     try {
-      const res = await axios.get('https://jsonplaceholder.typicode.com/posts');
+      const res = await axios.get('https://jsonplaceholder.typicode.com/todos');
       console.log(res.data)
       setData(res.data)
     } catch (error) {
@@ -20,12 +20,14 @@ const App = () =>{
 
   return(
     <>
-    <h1>Api Data</h1>
     {
       data.map((item)=>(
-        <div key={item.id}>
+        <div key={item.id} style={{border:"5px solid black",margin:"30px",padding:"30px"}}>
           <h2>{item.title}</h2>
+          <p>{item.id}</p>
+          <p>{item.userId}</p>
           <p>{item.body}</p>
+          <p style={{color:item.completed ? "green":"red"}}>{item.completed ? "Done":"Pending"}</p>
         </div>  
       ))
     }
