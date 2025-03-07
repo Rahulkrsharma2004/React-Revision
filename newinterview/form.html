@@ -9,7 +9,16 @@
             display: grid;
             grid-template-columns: repeat(3,1fr);
         }
-        
+        @media (max-width: 768px){
+            .main{
+                grid-template-columns: repeat(2,1fr);
+            }
+        }
+        @media (max-width:400px) {
+            .main{
+                grid-template-columns: repeat(1,1fr);
+            }
+        }
     </style>
 </head>
 <body>
@@ -21,5 +30,5 @@
         <div style="padding: 100px;border: 2px solid red;">5</div>
     </div>
 </body>
-<script></script>
+<script src="./form.js"></script>
 </html>
